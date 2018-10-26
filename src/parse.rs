@@ -11,7 +11,7 @@ pub enum ParseMoneyError {
 
 
 /// ```
-/// use ass_10::parse::parse_sym_money;
+/// use money_typesafe::parse::parse_sym_money;
 /// assert_eq!(parse_sym_money("£34.3",'£',2),Ok(3430));
 /// assert_eq!(parse_sym_money("-£34", '£',2),Ok(-3400));
 /// assert!(parse_sym_money("£34", '$',2).is_err());
@@ -28,7 +28,7 @@ pub fn parse_sym_money(s:&str,sym:char,dpoint:usize)->Result<i32,ParseMoneyError
 /// Parse currency notation returning currency symbol and value as i32
 ///
 /// ```
-/// use ass_10::parse::parse_money;
+/// use money_typesafe::parse::parse_money;
 /// let (c,v) = parse_money("£34.3",2).unwrap();
 /// assert_eq!(c,'£');
 /// assert_eq!(v,3430);

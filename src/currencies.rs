@@ -4,7 +4,7 @@ use std::fmt;
 use printer::display_curr;
 
 #[derive(Copy,Clone)]
-pub struct Money<T>{
+pub struct Money<T:Currency>{
     c:T,
 }
 
@@ -58,8 +58,8 @@ impl<T:Currency> FromStr for Money<T>{
 
 /// Parse your money from a string
 /// ``` 
-/// use ass_10::*;
-/// use ass_10::currencies::*;
+/// use money_typesafe::*;
+/// use money_typesafe::currencies::*;
 /// let g:Money<GBP> = "£32.45".parse().unwrap(); 
 /// assert_eq!(g,GBP(3245).into());
 ///
